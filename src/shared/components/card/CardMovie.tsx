@@ -58,7 +58,6 @@ export const CarouselCardMovie: React.FC = () => {
                       src={`https://image.tmdb.org/t/p/w200${movie[index].backdrop_path}`}
                       alt="foto"
                     />
-                    <span>aaaaa</span>
                   </CardHeader>
                   <CardContent>
                     {/* <h1 className="text-xl font-bold">{title}</h1> */}
