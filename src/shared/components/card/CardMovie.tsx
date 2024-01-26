@@ -35,7 +35,7 @@ export const CarouselCardMovie: React.FC = () => {
       } else {
         const movieArray = response.results || [];
         setMovie(movieArray);
-        setMovie(movieArray)
+        setMovie(movieArray);
         setFilteredMovie(movieArray);
       }
     });
@@ -53,7 +53,12 @@ export const CarouselCardMovie: React.FC = () => {
               <div className="p-1">
                 <Card className="rounded-lg shadow-md">
                   <CardHeader className="flex flex-col ">
-                    <img className="h-4/4 rounded-lg" src={`https://image.tmdb.org/t/p/w200${movie[index].backdrop_path}`} alt="foto" />
+                    <img
+                      className="h-4/4 rounded-lg"
+                      src={`https://image.tmdb.org/t/p/w200${movie[index].backdrop_path}`}
+                      alt="foto"
+                    />
+                    <span>aaaaa</span>
                   </CardHeader>
                   <CardContent>
                     {/* <h1 className="text-xl font-bold">{title}</h1> */}
