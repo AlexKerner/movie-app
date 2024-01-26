@@ -10,7 +10,7 @@ interface IMovie {
 }
 
 export const HomePage = () => {
-  
+
 
 
 
@@ -18,7 +18,7 @@ export const HomePage = () => {
     <>
       <Nav />
       <div className=" flex items-center justify-center">
-        <div className="">
+        <div className=" min-h-40">
           <CarouselCardMovie />
         </div>
       </div>
