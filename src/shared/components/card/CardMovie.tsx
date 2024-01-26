@@ -55,7 +55,9 @@ export const CarouselCardMovie: React.FC = () => {
                   <CardHeader className="flex flex-col ">
                     <img
                       className="h-4/4 rounded-lg"
-                      src={`https://image.tmdb.org/t/p/w200${movie[index].backdrop_path}`}
+                      src={`https://image.tmdb.org/t/p/w200${
+                        movie[index].backdrop_path as string
+                      }`}
                       alt="foto"
                     />
                   </CardHeader>
