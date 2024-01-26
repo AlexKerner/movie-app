@@ -19,7 +19,7 @@ export const HomePage = () => {
       <Nav />
       <div className=" flex items-center justify-center">
         <div className="">
-          
+          <CarouselCardMovie />
         </div>
       </div>
     </>

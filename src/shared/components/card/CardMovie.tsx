@@ -17,13 +17,15 @@ import { MovieServices } from "@/shared/services/api/movie/movieAPI";
 import { useEffect, useState } from "react";
 
 interface IMovie {
+  backdrop_path: string | undefined;
   title: string;
   img: string;
   id?: number;
 }
 
-export const CarouselCardMovie: React.FC<IMovie> = ({ title, img }) => {
+export const CarouselCardMovie: React.FC = () => {
   const [movie, setMovie] = useState<IMovie[]>([]);
+  const [img, setImg] = useState<IMovie[]>([]);
   const [filteredMovie, setFilteredMovie] = useState<IMovie[]>([]);
 
   useEffect(() => {
@@ -33,6 +35,7 @@ export const CarouselCardMovie: React.FC<IMovie> = ({ title, img }) => {
       } else {
         const movieArray = response.results || [];
         setMovie(movieArray);
+        setMovie(movieArray)
         setFilteredMovie(movieArray);
       }
     });
@@ -50,10 +53,10 @@ export const CarouselCardMovie: React.FC<IMovie> = ({ title, img }) => {
               <div className="p-1">
                 <Card className="rounded-lg shadow-md">
                   <CardHeader className="flex flex-col ">
-                    <img className="h-4/4 rounded-lg" src={img} alt="foto" />
+                    <img className="h-4/4 rounded-lg" src={`https://image.tmdb.org/t/p/w200${movie[index].backdrop_path}`} alt="foto" />
                   </CardHeader>
                   <CardContent>
-                    <h1 className="text-xl font-bold">{title}</h1>
+                    {/* <h1 className="text-xl font-bold">{title}</h1> */}
                   </CardContent>
                 </Card>
               </div>
