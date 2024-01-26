@@ -42,27 +42,27 @@ export const CarouselCardMovie: React.FC = () => {
 
   return (
     <div>
-      <Carousel className="max-w-4xl">
-        <CarouselContent className="ml-1">
+      <Carousel className="max-w-4xl p-4">
+        <CarouselContent className="p-2 flex gap-2">
           {Array.from({ length: 10 }).map((_, index) => (
             <CarouselItem
               key={index}
-              className="pl-1 md:basis-2/12 lg:basis-3/12"
+              className="pl-1 md:basis-3/12 lg:basis-2/12"
             >
-              <div className="p-1 min-h-20">
-                <Card className="rounded-lg shadow-md">
-                  <CardHeader className="flex flex-col ">
+              <div className="">
+                <Card className="rounded-lg shadow-md max-h-90 scale-100 hover:scale-105 transition-all cursor-pointer">
+                  <CardHeader className="flex flex-col p-2">
                     {movie[index] && (
                       <img
-                        className="h-5/6 rounded-lg"
-                        src={`https://image.tmdb.org/t/p/w200${movie[index].backdrop_path}`}
+                        className="h-6/6 rounded-lg"
+                        src={`https://image.tmdb.org/t/p/w200${movie[index].poster_path}`}
                         alt="foto"
                       />
                     )}
                   </CardHeader>
-                  <CardContent>
-                    {movie[index]?.original_title && (
-                      <h1 className="text-xl font-bold">{movie[index].original_title}</h1>
+                  <CardContent className="max-h-20 flex p-1 ml-1">
+                  {movie[index]?.original_title && (
+                      <span className="text-md scroll-m-10 font-bold tracking-tight lg:text-lg truncate">{movie[index].original_title}</span>
                     )}
                   </CardContent>
                 </Card>

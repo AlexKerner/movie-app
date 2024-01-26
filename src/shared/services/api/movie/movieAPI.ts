@@ -28,8 +28,21 @@ const getByRated = async () => {
   }
 }
 
+const getByGenre = async () => {
+  try {
+    const url = `https://api.themoviedb.org/3/genre/movie/list?api_key=${Environment.API_KEY}`
+    const response = await Api.get(url)
+
+    if (response) {
+      return response.data.id
+    }
+  } catch (error) {
+    return error
+  }
+}
+
 export const MovieServices = {
-  getAll, getByRated
+  getAll, getByRated, getByGenre
 }
 
 
