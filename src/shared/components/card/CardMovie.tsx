@@ -1,10 +1,7 @@
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
   CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
 import {
   Carousel,
@@ -13,17 +10,13 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Label } from "@/components/ui/label";
 
 import {
   Dialog,
-  DialogClose,
   DialogContent,
   DialogDescription,
-  DialogFooter,
   DialogHeader,
-  DialogTitle,
-  DialogTrigger,
+  DialogTrigger
 } from "@/components/ui/dialog";
 import { MovieServices } from "@/shared/services/api/movie/movieAPI";
 import { useEffect, useState } from "react";
@@ -48,7 +41,6 @@ interface IMovie {
 
 export const CarouselCardMovie: React.FC = () => {
   const [movie, setMovie] = useState<IMovie[]>([]);
-  const [filteredMovie, setFilteredMovie] = useState<IMovie[]>([]);
   const [otherGenresMovies, setOtherGenresMovies] = useState<IMovie[][]>([]);
   const [genreMap, setGenreMap] = useState<{ [key: number]: string }>({});
 
@@ -59,7 +51,6 @@ export const CarouselCardMovie: React.FC = () => {
       } else {
         const movieArray = response.results || [];
         setMovie(movieArray);
-        setFilteredMovie(movieArray);
       }
     });
 
