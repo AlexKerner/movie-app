@@ -1,8 +1,4 @@
-import {
-  Card,
-  CardContent,
-  CardHeader,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -16,7 +12,7 @@ import {
   DialogContent,
   DialogDescription,
   DialogHeader,
-  DialogTrigger
+  DialogTrigger,
 } from "@/components/ui/dialog";
 import { MovieServices } from "@/shared/services/api/movie/movieAPI";
 import { useEffect, useState } from "react";
@@ -118,7 +114,7 @@ export const CarouselCardMovie: React.FC = () => {
 
   return (
     <div className="flex flex-col justify-center items-center max-w-lg m-15">
-      <Carousel className="max-w-xs sm:max-w-lg md:max-w-xl lg:max-w-4xl xl:max-w-5xl mb-10">
+      <Carousel className="max-w-[17rem] sm:max-w-lg md:max-w-xl lg:max-w-4xl xl:max-w-5xl mb-10">
         <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-3xl font-bold">
           {genreNames[0]}
         </h1>
@@ -131,7 +127,7 @@ export const CarouselCardMovie: React.FC = () => {
                   className="pl-1 basis-4/12 sm:basis-3/12 md:basis-3/12 lg:basis-2/12"
                 >
                   <div className="">
-                    <Card className="rounded-lg shadow-lg hover:shadow hover:dark:shadow-slate-800 max-h-90 scale-100 hover:scale-110 transition-all cursor-pointer">
+                    <Card className="rounded-lg shadow-lg hover:shadow hover:dark:shadow-slate-800 max-h-90 scale-110 sm:scale-100 sm:hover:scale-110 transition-all cursor-pointer">
                       <CardHeader className="flex flex-col p-0">
                         {movie && (
                           <img
@@ -183,7 +179,9 @@ export const CarouselCardMovie: React.FC = () => {
 
                       {movie[index]?.overview && (
                         <span className="text-black dark:text-slate-200 w-full italic ">
-                          <span className="font-bold text-black dark:text-slate-200">Sinopse:</span>{" "}
+                          <span className="font-bold text-black dark:text-slate-200">
+                            Sinopse:
+                          </span>{" "}
                           {movie[index].overview}
                         </span>
                       )}
@@ -229,7 +227,7 @@ export const CarouselCardMovie: React.FC = () => {
       {otherGenresMovies.map((movies, genreIndex) => (
         <Carousel
           key={genreIndex}
-          className="max-w-xs sm:max-w-lg md:max-w-xl lg:max-w-4xl xl:max-w-5xl mb-10"
+          className="max-w-[17rem] sm:max-w-lg md:max-w-xl lg:max-w-4xl xl:max-w-5xl mb-10"
         >
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-3xl font-bold">
             {genreNames[genreIndex + 1]}
@@ -267,24 +265,24 @@ export const CarouselCardMovie: React.FC = () => {
 
                 <DialogContent className=" h-4/6 sm:h-3/5 md:h-3/5 lg:h-4/5  flex flex-col p-2 rounded-lg overflow-auto bg-slate-200 border-none dark:bg-slate-800 dark:text-slate-100">
                   <DialogHeader className="flex flex-col w-full mt-1">
-                  {movie && (
-                    <div className="absolute inset-0 h-60 sm:h-72">
-                      <img
-                        className="w-full h-full object-cover rounded-t brightness-50"
-                        src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-                        alt="Background"
-                      />
-                    </div>
-                  )}
-                  {movie && (
-                    <div className="h-60 mt-5">
-                      <img
-                        className="relative ml-4 z-10 rounded-md w-5/12 h-5/6 shadow-md sm:w-2/6 sm:h-full mt-16"
-                        src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                        alt="foto"
-                      />
-                    </div>
-                  )}
+                    {movie && (
+                      <div className="absolute inset-0 h-60 sm:h-72">
+                        <img
+                          className="w-full h-full object-cover rounded-t brightness-50"
+                          src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+                          alt="Background"
+                        />
+                      </div>
+                    )}
+                    {movie && (
+                      <div className="h-60 mt-5">
+                        <img
+                          className="relative ml-4 z-10 rounded-md w-5/12 h-5/6 shadow-md sm:w-2/6 sm:h-full mt-16"
+                          src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                          alt="foto"
+                        />
+                      </div>
+                    )}
                     <DialogDescription className="text-left mb-0 mx-2 pb-0 sm:text-lg">
                       <div className="flex flex-col justify-start items-start p-0 gap-2 mt-12 sm:mt-20">
                         {movie?.title && (

@@ -1,6 +1,6 @@
 
-import { CarouselCardMovie } from "../../shared/components/card/CardMovie";
 import { Nav } from "@/shared/components/nav/Nav";
+import { CarouselCardMovie } from "../../shared/components/card/CardMovie";
 
 
 export const HomePage = () => {
