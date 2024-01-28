@@ -114,7 +114,7 @@ export const CarouselCardMovie: React.FC = () => {
 
   return (
     <div className="flex flex-col justify-center items-center max-w-lg m-15">
-      <Carousel className="max-w-[17rem] sm:max-w-lg md:max-w-xl lg:max-w-4xl xl:max-w-5xl mb-10">
+      <Carousel className="max-w-[70%] sm:max-w-lg md:max-w-xl lg:max-w-4xl xl:max-w-5xl mb-10">
         <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-3xl font-bold">
           {genreNames[0]}
         </h1>
@@ -227,7 +227,7 @@ export const CarouselCardMovie: React.FC = () => {
       {otherGenresMovies.map((movies, genreIndex) => (
         <Carousel
           key={genreIndex}
-          className="max-w-[17rem] sm:max-w-lg md:max-w-xl lg:max-w-4xl xl:max-w-5xl mb-10"
+          className="max-w-[70%] sm:max-w-lg md:max-w-xl lg:max-w-4xl xl:max-w-5xl mb-10"
         >
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-3xl font-bold">
             {genreNames[genreIndex + 1]}
