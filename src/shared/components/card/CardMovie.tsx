@@ -118,7 +118,7 @@ export const CarouselCardMovie: React.FC = () => {
 
   return (
     <div className="flex flex-col justify-center items-center max-w-lg m-15">
-      <Carousel className="max-w-xs sm:max-w-lg md:max-w-xl lg:max-w-4xl xl:max-w-5xl mb-12">
+      <Carousel className="max-w-xs sm:max-w-lg md:max-w-xl lg:max-w-4xl xl:max-w-5xl mb-10">
         <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-3xl font-bold">
           {genreNames[0]}
         </h1>
@@ -131,7 +131,7 @@ export const CarouselCardMovie: React.FC = () => {
                   className="pl-1 basis-4/12 sm:basis-3/12 md:basis-3/12 lg:basis-2/12"
                 >
                   <div className="">
-                    <Card className="rounded-lg shadow-md max-h-90 scale-100 hover:scale-105 transition-all cursor-pointer">
+                    <Card className="rounded-lg shadow-lg hover:shadow hover:dark:shadow-slate-800 max-h-90 scale-100 hover:scale-110 transition-all cursor-pointer">
                       <CardHeader className="flex flex-col p-0">
                         {movie && (
                           <img
@@ -153,7 +153,7 @@ export const CarouselCardMovie: React.FC = () => {
                 </CarouselItem>
               </DialogTrigger>
 
-              <DialogContent className=" h-4/6 sm:h-3/5 md:h-3/5 lg:h-4/5 flex flex-col p-2 rounded-lg overflow-auto bg-slate-200 border-none">
+              <DialogContent className=" h-4/6 sm:h-3/5 md:h-3/5 lg:h-4/5 flex flex-col p-2 rounded-lg overflow-auto bg-slate-200 border-none dark:bg-slate-800 dark:text-slate-100">
                 <DialogHeader className="flex flex-col w-full mt-1">
                   {movie[index] && (
                     <div className="absolute inset-0 h-60 sm:h-72">
@@ -176,32 +176,32 @@ export const CarouselCardMovie: React.FC = () => {
                   <DialogDescription className="text-left mb-0 mx-2 pb-0 sm:text-lg">
                     <div className="flex flex-col justify-start items-start p-0 gap-2 mt-12 sm:mt-20">
                       {movie[index]?.title && (
-                        <h1 className="font-bold text-black text-lg mb-3">
+                        <h1 className="font-bold text-black dark:text-slate-200 text-lg mb-3">
                           {movie[index].title}
                         </h1>
                       )}
 
                       {movie[index]?.overview && (
-                        <span className="text-black w-full italic ">
-                          <span className="font-bold text-black">Sinopse:</span>{" "}
+                        <span className="text-black dark:text-slate-200 w-full italic ">
+                          <span className="font-bold text-black dark:text-slate-200">Sinopse:</span>{" "}
                           {movie[index].overview}
                         </span>
                       )}
                       {movie[index]?.vote_average && (
-                        <span className="text-black lg:text-lg w-full italic ">
+                        <span className="text-black dark:text-slate-200 lg:text-lg w-full italic ">
                           <span className="font-bold">Rating:</span>{" "}
                           {movie[index].vote_average}
                         </span>
                       )}
                       {movie[index]?.genre_ids && (
                         <div>
-                          <span className="font-bold text-black lg:text-lg w-full italic">
+                          <span className="font-bold text-black dark:text-slate-200 lg:text-lg w-full italic">
                             Genres:
                           </span>{" "}
                           {movie[index].genre_ids.map((genreId, genreIndex) => (
                             <span
                               key={genreIndex}
-                              className="text-black lg:text-lg w-full italic"
+                              className="text-black dark:text-slate-200 lg:text-lg w-full italic"
                             >
                               {genreIndex > 0 && ", "} {genreMap[genreId]}
                             </span>
@@ -209,7 +209,7 @@ export const CarouselCardMovie: React.FC = () => {
                         </div>
                       )}
                       {movie[index]?.release_date && (
-                        <span className="text-black lg:text-lg w-full italic">
+                        <span className="text-black dark:text-slate-200 lg:text-lg w-full italic">
                           <span className="font-bold">Release:</span>{" "}
                           {movie[index].release_date}
                         </span>
@@ -229,7 +229,7 @@ export const CarouselCardMovie: React.FC = () => {
       {otherGenresMovies.map((movies, genreIndex) => (
         <Carousel
           key={genreIndex}
-          className="max-w-xs sm:max-w-lg md:max-w-xl lg:max-w-4xl xl:max-w-5xl mb-12"
+          className="max-w-xs sm:max-w-lg md:max-w-xl lg:max-w-4xl xl:max-w-5xl mb-10"
         >
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-3xl font-bold">
             {genreNames[genreIndex + 1]}
@@ -243,7 +243,7 @@ export const CarouselCardMovie: React.FC = () => {
                     className="pl-1 basis-4/12 sm:basis-3/12 md:basis-3/12 lg:basis-2/12"
                   >
                     <div className="">
-                      <Card className=" shadow-md max-h-90 scale-100 hover:scale-105 transition-all cursor-pointer">
+                      <Card className=" shadow-md max-h-90 scale-100 hover:scale-110 transition-all cursor-pointer">
                         <CardHeader className="flex flex-col p-0 rounded-lg h-full">
                           {movie && (
                             <img
@@ -265,7 +265,7 @@ export const CarouselCardMovie: React.FC = () => {
                   </CarouselItem>
                 </DialogTrigger>
 
-                <DialogContent className=" h-4/6 sm:h-3/5 md:h-3/5 lg:h-4/5  flex flex-col p-2 rounded-lg overflow-auto bg-slate-200 border-none">
+                <DialogContent className=" h-4/6 sm:h-3/5 md:h-3/5 lg:h-4/5  flex flex-col p-2 rounded-lg overflow-auto bg-slate-200 border-none dark:bg-slate-800 dark:text-slate-100">
                   <DialogHeader className="flex flex-col w-full mt-1">
                   {movie && (
                     <div className="absolute inset-0 h-60 sm:h-72">
@@ -288,26 +288,26 @@ export const CarouselCardMovie: React.FC = () => {
                     <DialogDescription className="text-left mb-0 mx-2 pb-0 sm:text-lg">
                       <div className="flex flex-col justify-start items-start p-0 gap-2 mt-12 sm:mt-20">
                         {movie?.title && (
-                          <h1 className="font-bold text-black text-lg mb-3">
+                          <h1 className="font-bold text-black dark:text-slate-200 text-lg mb-3">
                             {movie.title}
                           </h1>
                         )}
 
                         {movie?.overview && (
-                          <span className="text-base text-black lg:text-lg w-full italic ">
+                          <span className="text-base text-black dark:text-slate-200 lg:text-lg w-full italic ">
                             <span className="font-bold">Sinopse:</span>{" "}
                             {movie.overview}
                           </span>
                         )}
                         {movie?.genre_ids && (
                           <div>
-                            <span className="text-base font-bold text-black lg:text-lg w-full italic">
+                            <span className="text-base font-bold text-black dark:text-slate-200 lg:text-lg w-full italic">
                               Genres:
                             </span>{" "}
                             {movie.genre_ids.map((genreId, genreIndex) => (
                               <span
                                 key={genreIndex}
-                                className="text-base text-black lg:text-lg w-full italic"
+                                className="text-base text-black dark:text-slate-200 lg:text-lg w-full italic"
                               >
                                 {genreIndex > 0 && ", "} {genreMap[genreId]}
                               </span>
@@ -315,13 +315,13 @@ export const CarouselCardMovie: React.FC = () => {
                           </div>
                         )}
                         {movie?.release_date && (
-                          <span className="text-base text-black lg:text-lg w-full italic ">
+                          <span className="text-base text-black dark:text-slate-200 lg:text-lg w-full italic ">
                             <span className="font-bold">Release:</span>{" "}
                             {movie.release_date}
                           </span>
                         )}
                         {movie?.vote_average && (
-                          <span className="text-base text-black lg:text-lg w-full italic ">
+                          <span className="text-base text-black dark:text-slate-200 lg:text-lg w-full italic ">
                             <span className="font-bold">Rating:</span>{" "}
                             {movie.vote_average}
                           </span>
