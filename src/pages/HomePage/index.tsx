@@ -44,7 +44,7 @@ export const HomePage = () => {
   const fetchSearchMovie = async (query: string) => {
     try {
       return await axios.get(
-        `https://api.themoviedb.org/3/search/movie?api_key=${Environment.API_KEY}&query=${query}`
+        `https://api.themoviedb.org/3/search/movie?include_adult=false&api_key=${Environment.API_KEY}&query=${query}`
       );
     } catch (error) {
       throw new Error("Erro ao buscar filmes");
@@ -53,7 +53,7 @@ export const HomePage = () => {
   const fetchGenres = async () => {
     axios
       .get<{ genres: IGenre[] }>(
-        `https://api.themoviedb.org/3/genre/movie/list?api_key=${Environment.API_KEY}`
+        `https://api.themoviedb.org/3/genre/movie/list?include_adult=false&api_key=${Environment.API_KEY}`
       )
       .then((response) => {
         const genres = response.data.genres.reduce((acc, genre) => {

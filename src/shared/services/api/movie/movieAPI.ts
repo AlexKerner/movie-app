@@ -4,7 +4,7 @@ import { Api } from "../axios"
 
 const getAll = async () => {
   try {
-    const url = `https://api.themoviedb.org/3/discover/movie?language=en&api_key=${Environment.API_KEY}`
+    const url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&language=en&api_key=${Environment.API_KEY}`
     const response = await Api.get(url)
 
     if (response) {
@@ -17,7 +17,7 @@ const getAll = async () => {
 
 const getByRated = async () => {
   try {
-    const url = `https://api.themoviedb.org/3/movie/top_rated?language=en&api_key=${Environment.API_KEY}`
+    const url = `https://api.themoviedb.org/3/movie/top_rated?include_adult=false&language=en&api_key=${Environment.API_KEY}`
     const response = await Api.get(url)
 
     if (response) {
@@ -30,7 +30,7 @@ const getByRated = async () => {
 
 const getByGenre = async (genreId: number) => {
   try {
-    const url = `https://api.themoviedb.org/3/discover/movie?language=en&api_key=${Environment.API_KEY}&with_genres=${genreId}`
+    const url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&language=en&api_key=${Environment.API_KEY}&with_genres=${genreId}`
     const response = await Api.get(url);
 
     if (response) {
