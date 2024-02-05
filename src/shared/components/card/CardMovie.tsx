@@ -241,7 +241,7 @@ export const CarouselCardMovie: React.FC = () => {
                     className="pl-1 basis-4/12 sm:basis-3/12 md:basis-3/12 lg:basis-2/12"
                   >
                     <div className="">
-                      <Card className=" shadow-md min-h-64 max-h-90 scale-100 hover:scale-110 transition-all cursor-pointer">
+                      <Card className=" shadow-md max-h-90 scale-100 hover:scale-110 transition-all cursor-pointer">
                         <CardHeader className="flex flex-col p-0 rounded-lg h-full">
                           {movie && (
                             <img
