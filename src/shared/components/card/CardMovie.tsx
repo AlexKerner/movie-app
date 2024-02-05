@@ -149,7 +149,7 @@ export const CarouselCardMovie: React.FC = () => {
                 </CarouselItem>
               </DialogTrigger>
 
-              <DialogContent className=" h-4/6 sm:h-3/5 md:h-3/5 lg:h-4/5 flex flex-col p-2 rounded-lg overflow-auto bg-slate-200 border-none dark:bg-slate-800 dark:text-slate-100">
+              <DialogContent className=" h-4/6 sm:h-3/5 md:h-3/5 lg:h-[75%] w-5/6 flex flex-col p-2 rounded-lg overflow-auto bg-slate-200 border-none dark:bg-slate-800 dark:text-slate-100">
                 <DialogHeader className="flex flex-col w-full mt-1">
                   {movie[index] && (
                     <div className="absolute inset-0 h-60 sm:h-72">

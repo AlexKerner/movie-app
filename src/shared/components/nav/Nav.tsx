@@ -11,8 +11,9 @@ export const Nav: React.FC<NavProps> = ({handleSearchChange, value}) => {
 
 
   return (
-    <header className="w-screen p-5 mb-10 flex items-center justify-between shadow-md sm:p-8 md:p-10 lg:p-10 bg-white dark:bg-slate-950">
-      <div>
+    <header className="w-screen p-4 mb-10 flex items-center justify-center shadow-md md:p-8 bg-white dark:bg-slate-950">
+      <div className="flex justify-between items-center max-w-[100%] sm:max-w-[75%] min-w-[100%] gap-2">
+        <div>
         <h1 className="scroll-m-20 text-2xl font-extrabold tracking-tight sm:text-3xl md:text-4xl lg:text-4xl">
         MOVIE-APP
       </h1>
@@ -30,6 +31,8 @@ export const Nav: React.FC<NavProps> = ({handleSearchChange, value}) => {
           <ModeToggle />
         </div>
       </div>
+      </div>
+      
     </header>
   );
 };
