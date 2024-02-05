@@ -4,29 +4,12 @@ import { ChangeEvent, useState } from "react";
 import axios from "axios";
 import { Environment } from "@/shared/environments";
 import { CardSearch } from "@/shared/components/cardSearch/CardSearch";
-import {
-  Dialog,
-  DialogTrigger,
-  DialogContent,
-  DialogHeader,
-  DialogDescription,
-} from "@/components/ui/dialog";
-
-interface IGenre {
-  id: number;
-  name: string;
-}
 
 interface Movie {
   [x: string]: any;
   id: number;
   poster_path: string;
   title: string;
-  backdrop_path: string;
-  overview: string;
-  vote_average: number;
-  release_date: number;
-  genre_ids: [];
 }
 
 export const HomePage = () => {
